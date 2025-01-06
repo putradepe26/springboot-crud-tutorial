@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Add User</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+<link rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+        integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="../css/shards.min.css"> -->
+</head>
+<body>
+	<div class="container my-5">
+	<h3> Add Candidate</h3>
+  <div class="card">
+  	<div class="card-body">
+    <div class="col-md-10">
+    	<form action="#" th:action="@{/candidates/add}"
+      	th:object="${candidate}" method="post">
+      	<div class="row">
+
+			<div class="form-group col-md-8">
+				<label for="noreg" class="col-form-label">Nomor Registrasi</label> <input
+				type="text" th:field="*{noreg}" class="form-control" id="noreg"
+				placeholder="Nomor Registrasi"> <span
+				th:if="${#fields.hasErrors('noreg')}" th:errors="*{noreg}"
+				class="text-danger"></span>
+			 </div>
+
+			 <div class="form-group col-md-8">
+				<label for="name" class="col-form-label">Nama Pemilik</label> <input
+				type="text" th:field="*{name}" class="form-control" id="name"
+				placeholder="Nama Pemilik"> <span
+				th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+				class="text-danger"></span>
+			 </div>
+
+		  <div class="form-group col-md-8">
+			 <label for="alamat" class="col-form-label">Alamat</label> <textarea 
+			 type="text" th:field="*{alamat}" class="form-control" id="alamat"
+			 placeholder="Alamat Pemilik"> <span
+			 th:if="${#fields.hasErrors('alamat')}" th:errors="*{alamat}"
+			 class="text-danger"></span>
+			 </textarea>
+		  </div>
+
+		  <div class="form-group col-md-8">
+			 <label for="merk" class="col-form-label">Merk Kendaraan</label> <input
+				type="text" th:field="*{merk}" class="form-control" id="merk"
+				placeholder="Merk Kendaraan"> <span
+				th:if="${#fields.hasErrors('merk')}" th:errors="*{merk}"
+				class="text-danger"></span>
+		  </div>
+
+		  <div class="form-group col-md-8">
+			 <label for="tahun" class="col-form-label">Tahun Pembuatan</label> <input
+				type="text" th:field="*{tahun}" class="form-control" id="tahun"
+				placeholder="Tahun Pembuatan"> <span
+				th:if="${#fields.hasErrors('tahun')}" th:errors="*{tahun}"
+				class="text-danger"></span>
+		  </div>
+
+		  <div class="form-group col-md-8">
+			 <label for="silinder" class="col-form-label">Kapasitas Silinder</label> <input
+				type="text" th:field="*{silinder}" class="form-control" id="silinder"
+				placeholder="Kapasitas cc"> <span
+				th:if="${#fields.hasErrors('silinder')}" th:errors="*{silinder}"
+				class="text-danger"></span>
+		  </div>
+
+
+		  <div class="form-group col-md-8">
+				<label for="warna" class="col-form-label">Warna Kendaraan</label> 
+				<select name="warna" id="warna">
+					<option value="merah">Merah</option>
+					<option value="hitam">Hitam</option>
+					<option value="biru">Biru</option>
+					<option value="abu-abu">Abu-Abu</option>
+					</select>
+					<span th:if="${#fields.hasErrors('warna')}" th:errors="*{warna}" class="text-danger"></span>
+		</div>
+
+
+		  <div class="form-group col-md-8">
+			 <label for="bhnbakar" class="col-form-label">Bahan Bakar</label> <input
+				type="text" th:field="*{bhnbakar}" class="form-control" id="bhnbakar"
+				placeholder="Bahan Bakar"> <span
+				th:if="${#fields.hasErrors('bhnbakar')}" th:errors="*{bhnbakar}"
+				class="text-danger"></span>
+		  </div>
+
+        <div class="col-md-6">
+        	<input type="submit" class="btn btn-primary" value="Add Candidate">
+        </div>
+
+        <div class="form-group col-md-8"></div>
+
+      	</div>
+    	</form>
+    </div>
+  	</div>
+  </div>
+	</div>
+</body>
+</html>
